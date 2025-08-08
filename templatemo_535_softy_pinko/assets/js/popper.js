@@ -2443,3 +2443,33 @@ return Popper;
 
 })));
 //# sourceMappingURL=popper.js.map
+
+/*Colocado o Contador para a Data prevista*/
+
+// countdown.js
+
+// Data alvo: 4 de setembro de 2025, 00:00:00
+var dataAlvo = new Date("September 4, 2025 00:00:00").getTime();
+
+var timer = setInterval(function() {
+    var agora = new Date().getTime();
+    var distancia = dataAlvo - agora;
+
+    // Cálculos de tempo
+    var dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+    var horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+    var segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+    // Atualiza o HTML
+    document.getElementById("dias").innerHTML = dias;
+    document.getElementById("horas").innerHTML = horas;
+    document.getElementById("minutos").innerHTML = minutos;
+    document.getElementById("segundos").innerHTML = segundos;
+
+    // Quando acabar
+    if (distancia < 0) {
+        clearInterval(timer);
+        document.getElementById("contador").innerHTML = "<h2>O grande dia chegou!</h2>";
+    }
+}, 1000);
