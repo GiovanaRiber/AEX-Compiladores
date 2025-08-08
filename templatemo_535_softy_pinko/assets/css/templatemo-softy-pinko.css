@@ -113,12 +113,12 @@ body {
 }
 
 ::selection {
-  background: #ff589e;
+  background: #39b2d3;
   color: #fff;
 }
 
 ::-moz-selection {
-  background: #ff589e;
+  background: #39b2d3;
   color: #fff;
 }
 
@@ -314,7 +314,7 @@ a.main-button-slider {
   font-size: 13px;
   border-radius: 20px;
   padding: 12px 20px;
-  background-color: #ff589e;
+  background-color: #39b2d3; /*mudei cor do botão, tudo que era 39b2d3, substitui por 39b2d3*/
   text-transform: uppercase;
   color: #fff;
   letter-spacing: 0.25px;
@@ -325,14 +325,14 @@ a.main-button-slider {
 }
 
 a.main-button-slider:hover {
-  background-color: #8261ee;
+  background-color: #215e76; /*mudei cor do botão, tudo que era 215e76, subsitui por 215e76*/
 }
 
 a.main-button {
   font-size: 13px;
   border-radius: 20px;
   padding: 12px 20px;
-  background-color: #8261ee;
+  background-color: #215e76;
   text-transform: uppercase;
   color: #fff;
   letter-spacing: 0.25px;
@@ -343,7 +343,7 @@ a.main-button {
 }
 
 a.main-button:hover {
-  background-color: #ff589e;
+  background-color: #39b2d3;
 }
 
 button.main-button {
@@ -353,7 +353,7 @@ button.main-button {
   font-size: 13px;
   border-radius: 20px;
   padding: 12px 20px;
-  background-color: #8261ee;
+  background-color: #215e76;
   text-transform: uppercase;
   color: #fff;
   letter-spacing: 0.25px;
@@ -364,7 +364,7 @@ button.main-button {
 }
 
 button.main-button:hover {
-  background-color: #ff589e;
+  background-color: #39b2d3;
 }
 
 
@@ -448,7 +448,7 @@ header
 }
 
 .header-area .main-nav .nav li a:hover {
-  color: #ff589e;
+  color: #39b2d3;
 }
 
 .header-area .main-nav .menu-trigger {
@@ -560,7 +560,7 @@ header
 }
 
 .header-area.header-sticky .nav li a.active {
-  color: #ff589e;
+  color: #39b2d3;
 }
 
 @media (max-width: 1200px) {
@@ -644,7 +644,7 @@ welcome
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(../images/banner-bg.png);
+  background-image: url(../images/banner-bg-1.png); /*mudei a cor*/
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover; 
@@ -769,7 +769,7 @@ features
 }
 
 .features-small-item:hover .icon {
-  background-color: #ff589e;
+  background-color: #39b2d3;
 }
 
 .features-small-item .icon {
@@ -783,7 +783,7 @@ features
   margin: auto;
   position: relative;
   margin-bottom: 30px;
-  background: #8261ee;
+  background: #215e76;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -1175,7 +1175,7 @@ team
   display: block;
   font-weight: 400;
   font-size: 15px;
-  color: #ff589e;
+  color: #39b2d3;
   letter-spacing: 0.25px;
 }
 
@@ -1214,7 +1214,7 @@ pricing
 }
 
 .pricing-item.active .pricing-body .price-wrapper {
-  background-color: #ff589e;
+  background-color: #39b2d3;
 }
 
 .pricing-item.active .pricing-body .price-wrapper .currency {
@@ -1257,7 +1257,7 @@ pricing
   text-align: center;
   padding-top: 20px;
   padding-bottom: 13px;
-  background: #8261ee;
+  background: #215e76;
   width: 80%;
   margin: auto;
   margin-bottom: 40px;
@@ -1351,7 +1351,7 @@ blog
 }
 
 .blog-post-thumb h3 a:hover {
-  color: #ff589e;
+  color: #39b2d3;
 }
 
 .blog-post-thumb .text {
@@ -1442,7 +1442,7 @@ footer
 --------------------------------------------- 
 */
 footer {
-  background-image: linear-gradient(127deg, #a759d1 0%, #8261ee 91%);
+  background-image: linear-gradient(127deg, #a759d1 0%, #215e76 91%);
   padding-top: 30px;
 }
 
@@ -1474,7 +1474,7 @@ footer .social li a {
 }
 
 footer .social li a:hover {
-  background-color: #ff589e;
+  background-color: #39b2d3;
   color: #fff;
 }
 
@@ -1510,7 +1510,7 @@ preloader
 */
 #preloader {
   overflow: hidden;
-  background-image: linear-gradient(135deg, #a759d1 0%, #8261ee 100%);
+  background-image: linear-gradient(135deg, #a759d1 0%, #215e76 100%);
   left: 0;
   right: 0;
   top: 0;
@@ -1657,4 +1657,3 @@ preloader
 }
 
 /*fim team*/
-
