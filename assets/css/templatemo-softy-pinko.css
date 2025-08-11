@@ -648,7 +648,7 @@ welcome
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover; 
-  height: 100vh;
+  height: 120vh; /*se der sobreposição com a parte de baixo, aumentar mais isso aqui*/
 }
 
 .welcome-area .header-text {
