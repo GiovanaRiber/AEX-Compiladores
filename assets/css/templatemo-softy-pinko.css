@@ -1700,3 +1700,8 @@ preloader
 .nav-carrossel button:hover {
     background-color: rgba(33, 94, 118, 1);
 }
+
+
+.text-show{
+  display: none;
+}

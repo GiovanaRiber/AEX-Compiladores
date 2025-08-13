@@ -1,11 +1,9 @@
 
 document.querySelectorAll(".read-more-btn").forEach(button => {
   button.addEventListener("click", function () {
-    const card = this.closest(".card");
-    card.classList.toggle("show-more");
+    const cardOn = this.closest(".text-show");
+    const cardOff = this.closest(".text-less");
     
-    this.textContent = card.classList.contains("show-more")
-      ? "Read Less"
-      : "Read More";
+    if (cardOn)
   });
 });
