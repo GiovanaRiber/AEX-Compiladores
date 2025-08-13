@@ -129,7 +129,7 @@ body {
 }
 
 .section.colored {
-  background: #f2f2fe;
+  background: #f0f3fe;
 }
 
 .hr {
@@ -1617,7 +1617,7 @@ preloader
 .team-member .main-content {
     border-radius: 25px;
     padding: 20px 30px 40px 30px;
-    background-color: #f1f0fe;
+    background-color: #f0f3fe;
     text-align: center;
 }
 
