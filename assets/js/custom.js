@@ -130,30 +130,45 @@
 		});
 	}
 
-	$$(document).ready(function(){
-    let items = $('.testimonials-carousel .team-member');
-    let itemsPerSlide = 4;
-    let currentIndex = 0;
+	
+const slidesTeam = document.querySelector('.slides-team');
+const teamMembers = document.querySelectorAll('.team-member');
+const btnPrev = document.getElementById('prev');
+const btnNext = document.getElementById('next');
 
-    function showSlide(index) {
-        items.hide();
-        for (let i = 0; i < itemsPerSlide; i++) {
-            let itemIndex = (index + i) % items.length;
-            $(items[itemIndex]).show();
-        }
-    }
+let currentIndex = 0;
+const totalSlides = teamMembers.length;
+// Quantos mostrar por vez? (conforme CSS: 4)
+const slidesToShow = 4;
+const maxIndex = totalSlides - slidesToShow;
 
-    // Mostrar o primeiro grupo
-    showSlide(currentIndex);
+function updateSlidePosition() {
+  // Limita currentIndex entre 0 e maxIndex
+  if (currentIndex < 0) currentIndex = maxIndex >= 0 ? maxIndex : 0;
+  if (currentIndex > maxIndex) currentIndex = 0;
 
-    // Trocar automaticamente a cada 3s
-    setInterval(function(){
-        currentIndex = (currentIndex + itemsPerSlide) % items.length;
-        showSlide(currentIndex);
-    }, 3000);
+  // Move o container .slides-team
+  slidesTeam.style.transform = `translateX(-${(100 / slidesToShow) * currentIndex}%)`;
+}
+
+btnPrev.addEventListener('click', () => {
+  currentIndex--;
+  updateSlidePosition();
 });
 
+btnNext.addEventListener('click', () => {
+  currentIndex++;
+  updateSlidePosition();
+});
 
+// Auto slide a cada 5 segundos (opcional)
+setInterval(() => {
+  currentIndex++;
+  updateSlidePosition();
+}, 5000);
 
+// Inicializa a posição
+updateSlidePosition();
 
 })(window.jQuery);
+

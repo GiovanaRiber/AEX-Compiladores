@@ -1591,75 +1591,112 @@ preloader
 
 .team {
     margin-top: 160px;
-  }
-  .team-member {
-    margin-bottom: 140px;
-  }
-
-.team-member {
-  position: relative;
 }
 
-.team-member:hover img {
-  top: -120px;
+.team-member {
+    flex: 0 0 25%; /* 4 cards por linha */
+    box-sizing: border-box;
+    padding: 0 15px;
+    margin-bottom: 60px; /* ajuste margem entre linhas */
+    position: relative;
 }
 
 .team-member img {
-  max-width: 220px;
-  border-radius: 50%;
-  position: absolute;
-  top: -110px;
-  left: 50%;
-  transform: translateX(-110px);
-  transition: all .3s;
+    max-width: 150px; /* ajuste para tamanho proporcional */
+    border-radius: 50%;
+    position: relative; /* mantém imagem no fluxo */
+    display: block;
+    margin: 0 auto 20px auto; /* centraliza horizontal e separa do conteúdo */
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover img {
+    transform: scale(1.05); /* leve zoom no hover */
 }
 
 .team-member .main-content {
-  border-radius: 25px;
-  padding: 140px 30px 40px 30px;
-  background-color: #f1f0fe;
-  text-align: center;
+    border-radius: 25px;
+    padding: 20px 30px 40px 30px;
+    background-color: #f1f0fe;
+    text-align: center;
 }
 
 .team-member .main-content span.category {
-  color: #215e76;
-  font-size: 15px;
+    color: #215e76;
+    font-size: 15px;
 }
 
 .team-member .main-content h4 {
-  font-size: 22px;
-  font-weight: 600;
-  margin-top: 8px;
-  margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 8px;
+    margin-bottom: 15px;
 }
 
 .team-member .main-content ul li {
-  display: inline-block;
-  margin: 0px 2px;
+    display: inline-block;
+    margin: 0 2px;
 }
 
 .team-member .main-content ul li a {
-  background-color: #fff;
-  color: #215e76;
-  display: inline-block;
-  text-align: center;
-  line-height: 40px;
-  font-size: 18px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  transition: all .3s;
+    background-color: #fff;
+    color: #215e76;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all .3s;
 }
 
 .team-member .main-content ul li a:hover {
-  background-color: #215e76;
-  color: #fff;
+    background-color: #215e76;
+    color: #fff;
 }
 
 .testimonials-carousel .team-member {
     margin: 0 10px;
 }
 
+/* Carrossel */
 
+.carrossel {
+    position: relative;
+    overflow: hidden;
+    margin-top: 50px;
+}
 
-/*fim team*/
+.slides-team {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 10px;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+.nav button {
+    pointer-events: all;
+    background-color: rgba(33, 94, 118, 0.8);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 5px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav button:hover {
+    background-color: rgba(33, 94, 118, 1);
+}
