@@ -4,6 +4,9 @@ document.querySelectorAll(".read-more-btn").forEach(button => {
     const cardOn = this.closest(".text-show");
     const cardOff = this.closest(".text-less");
     
-    if (cardOn)
+    if (cardOff.style.display === 'block'){
+      cardOn.style.display = 'block';
+      cardOff.style.display =
+    }
   });
 });

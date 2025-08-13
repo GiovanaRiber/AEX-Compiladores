@@ -648,7 +648,7 @@ welcome
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover; 
-  height: 135vh; /*se der sobreposição com a parte de baixo, aumentar mais isso aqui*/
+  height: 110vh; /*se der sobreposição com a parte de baixo, aumentar mais isso aqui*/
 }
 
 .welcome-area .header-text {
@@ -1701,6 +1701,9 @@ preloader
     background-color: rgba(33, 94, 118, 1);
 }
 
+.text-less{
+  display: block;
+}
 
 .text-show{
   display: none;
