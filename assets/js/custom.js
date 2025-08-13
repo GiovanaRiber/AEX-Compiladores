@@ -130,5 +130,30 @@
 		});
 	}
 
+	$$(document).ready(function(){
+    let items = $('.testimonials-carousel .team-member');
+    let itemsPerSlide = 4;
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        items.hide();
+        for (let i = 0; i < itemsPerSlide; i++) {
+            let itemIndex = (index + i) % items.length;
+            $(items[itemIndex]).show();
+        }
+    }
+
+    // Mostrar o primeiro grupo
+    showSlide(currentIndex);
+
+    // Trocar automaticamente a cada 3s
+    setInterval(function(){
+        currentIndex = (currentIndex + itemsPerSlide) % items.length;
+        showSlide(currentIndex);
+    }, 3000);
+});
+
+
+
 
 })(window.jQuery);

@@ -1656,4 +1656,10 @@ preloader
   color: #fff;
 }
 
+.testimonials-carousel .team-member {
+    margin: 0 10px;
+}
+
+
+
 /*fim team*/

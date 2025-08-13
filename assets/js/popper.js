@@ -2473,3 +2473,19 @@ var timer = setInterval(function() {
         document.getElementById("contador").innerHTML = "<h2>O grande dia chegou!</h2>";
     }
 }, 1000);
+
+// testando o ler mais
+
+document.querySelectorAll(".read-more-btn").forEach(button => {
+    button.addEventListener("click", function() {
+        const extraText = this.previousElementSibling;
+        
+        if (extraText.style.display === "none" || extraText.style.display === "") {
+            extraText.style.display = "block";
+            this.textContent = "Mostrar Menos";
+        } else {
+            extraText.style.display = "none";
+            this.textContent = "Leia Mais";
+        }
+    });
+});
