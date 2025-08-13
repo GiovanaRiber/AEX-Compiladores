@@ -1673,7 +1673,7 @@ preloader
     transition: transform 0.5s ease;
 }
 
-.nav {
+.nav-carrossel {
     position: absolute;
     top: 50%;
     width: 100%;
@@ -1685,7 +1685,7 @@ preloader
     pointer-events: none;
 }
 
-.nav button {
+.nav-carrossel button {
     pointer-events: all;
     background-color: rgba(33, 94, 118, 0.8);
     border: none;
@@ -1697,6 +1697,6 @@ preloader
     transition: background-color 0.3s ease;
 }
 
-.nav button:hover {
+.nav-carrossel button:hover {
     background-color: rgba(33, 94, 118, 1);
 }
