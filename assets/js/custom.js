@@ -163,10 +163,10 @@ btnNext.addEventListener('click', () => {
 });
 
 // Auto slide a cada 5 segundos (opcional)
-setInterval(() => {
+/*setInterval(() => {
   currentIndex++;
   updateSlidePosition();
-}, 5000);
+}, 5000);*/
 
 // Inicializa a posição
 updateSlidePosition();
