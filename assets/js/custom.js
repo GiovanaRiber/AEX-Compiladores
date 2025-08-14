@@ -171,5 +171,20 @@ setInterval(() => {
 // Inicializa a posição
 updateSlidePosition();
 
+
+// transição mais suave ao clicar no botão
+document.querySelectorAll(".read-more-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const textContainer = btn.parentElement.querySelector(".text");
+    textContainer.classList.toggle("expanded");
+
+    if (textContainer.classList.contains("expanded")) {
+      btn.textContent = "Leia Menos";
+    } else {
+      btn.textContent = "Leia Mais";
+    }
+  });
+});
+
 })(window.jQuery);
 

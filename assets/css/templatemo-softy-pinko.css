@@ -1309,7 +1309,14 @@ blog
 
 .blog-post-thumb .img {
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 15px;
+  position: relative;
+  height: 200px;
+}
+
+.blog-post-thumb .img img{
+  overflow: hidden;
+  border-radius: 15px;
   position: relative;
   height: 200px;
 }
@@ -1366,6 +1373,69 @@ blog
 .blog-list .blog-post-thumb {
   text-align: left;
 }
+
+/* arrumar os titulos e subtitulos */
+.blog-content h3 {
+    font-size: 1.2rem; /* título menor */
+    margin-bottom: 5px;
+}
+
+.blog-content .subtitulo {
+    font-size: 1rem;
+    color: #515050;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.blog-content p {
+    font-size: 0.9rem; /* texto mais compacto */
+    line-height: 1.4;
+}
+
+.main-button.read-more-btn {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+}
+
+
+/*tansição maus suave*/
+
+.text {
+  overflow: hidden;
+  max-height: 80px; /* altura inicial para texto reduzido */
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  opacity: 1;
+}
+
+.text.expanded {
+  max-height: 500px; /* altura suficiente para mostrar todo texto */
+  opacity: 1;
+}
+
+.text-less {
+  display: block;
+}
+
+.text-show {
+  display: none;
+}
+
+.text.expanded .text-less {
+  display: none;
+}
+
+.text.expanded .text-show {
+  display: block;
+}
+
+.read-more-btn {
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+
+/*-*/
+
 
 
 /* 

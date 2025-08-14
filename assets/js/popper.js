@@ -2482,7 +2482,7 @@ document.querySelectorAll(".read-more-btn").forEach(button => {
         const cardOn = container.querySelector(".text-show");
         const cardOff = container.querySelector(".text-less");
         
-        if (cardOff.style.display === "block"){
+        if (cardOn.style.display === "none" || cardOn.style.display === ""){
           cardOn.style.display = "block";
           cardOff.style.display = "none";
           this.textContent = "Mostrar Menos";
