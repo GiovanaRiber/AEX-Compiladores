@@ -792,6 +792,11 @@ features
   }
 }
 
+.home-feature .row > .col-lg-12 > .row {
+    display: flex;
+    justify-content: center;
+}
+
 /* 
 ---------------------------------------------
 parallax & home seperator
