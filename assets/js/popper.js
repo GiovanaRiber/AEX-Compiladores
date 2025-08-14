@@ -2478,14 +2478,18 @@ var timer = setInterval(function() {
 
 document.querySelectorAll(".read-more-btn").forEach(button => {
     button.addEventListener("click", function() {
-        const extraText = this.previousElementSibling;
+        const container = this.parentElement;
+        const cardOn = container.querySelector(".text-show");
+        const cardOff = container.querySelector(".text-less");
         
-        if (extraText.style.display === "none" || extraText.style.display === "") {
-            extraText.style.display = "block";
-            this.textContent = "Mostrar Menos";
+        if (cardOff.style.display === "block"){
+          cardOn.style.display = "block";
+          cardOff.style.display = "none";
+          this.textContent = "Mostrar Menos";
         } else {
-            extraText.style.display = "none";
-            this.textContent = "Leia Mais";
+          cardOn.style.display = "none";
+          cardOff.style.display = "block";
+          this.textContent = "Leia Mais";
         }
     });
 });

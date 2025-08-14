@@ -141,6 +141,7 @@ const totalSlides = teamMembers.length;
 // Quantos mostrar por vez? (conforme CSS: 4)
 const slidesToShow = 4;
 const maxIndex = totalSlides - slidesToShow;
+const slideWidth = 100;
 
 function updateSlidePosition() {
   // Limita currentIndex entre 0 e maxIndex
@@ -148,7 +149,7 @@ function updateSlidePosition() {
   if (currentIndex > maxIndex) currentIndex = 0;
 
   // Move o container .slides-team
-  slidesTeam.style.transform = `translateX(-${(100 / slidesToShow) * currentIndex}%)`;
+  slidesTeam.style.transform = `translateX(-${(slideWidth) * currentIndex}%)`;
 }
 
 btnPrev.addEventListener('click', () => {
