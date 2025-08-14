@@ -137,19 +137,23 @@ const btnPrev = document.getElementById('prev');
 const btnNext = document.getElementById('next');
 
 let currentIndex = 0;
-const totalSlides = teamMembers.length;
-// Quantos mostrar por vez? (conforme CSS: 4)
-const slidesToShow = 4;
-const maxIndex = totalSlides - slidesToShow;
-const slideWidth = 100;
+
+function getSlidesToShow() {
+  if (window.innerWidth >= 1200) return 4;
+  if (window.innerWidth >= 992) return 3;
+  if (window.innerWidth >= 768) return 2;
+  return 1;
+}
 
 function updateSlidePosition() {
-  // Limita currentIndex entre 0 e maxIndex
-  if (currentIndex < 0) currentIndex = maxIndex >= 0 ? maxIndex : 0;
-  if (currentIndex > maxIndex) currentIndex = 0;
+  const slidesToShow = getSlidesToShow();
+  const slideWidth = teamMembers[0].offsetWidth;
 
-  // Move o container .slides-team
-  slidesTeam.style.transform = `translateX(-${(slideWidth) * currentIndex}%)`;
+  // Usa módulo para criar efeito circular
+  const totalSlides = teamMembers.length;
+  currentIndex = (currentIndex + totalSlides) % totalSlides;
+
+  slidesTeam.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 }
 
 btnPrev.addEventListener('click', () => {
@@ -162,14 +166,20 @@ btnNext.addEventListener('click', () => {
   updateSlidePosition();
 });
 
-// Auto slide a cada 5 segundos (opcional)
-/*setInterval(() => {
+// Atualiza ao redimensionar a tela
+window.addEventListener('resize', updateSlidePosition);
+
+// Auto slide a cada 5 segundos
+setInterval(() => {
   currentIndex++;
   updateSlidePosition();
-}, 5000);*/
+}, 5000);
 
 // Inicializa a posição
 updateSlidePosition();
+
+
+
 
 
 // transição mais suave ao clicar no botão
