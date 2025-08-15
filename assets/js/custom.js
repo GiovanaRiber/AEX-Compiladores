@@ -148,32 +148,31 @@ function getSlidesToShow() {
 function updateSlidePosition() {
   const slidesToShow = getSlidesToShow();
   const slideWidth = teamMembers[0].offsetWidth;
-
-  // Usa módulo para criar efeito circular
   const totalSlides = teamMembers.length;
-  currentIndex = (currentIndex + totalSlides) % totalSlides;
+
+  // Limita o índice para não deixar espaço vazio
+  const maxIndex = totalSlides - slidesToShow;
+  if (currentIndex < 0) currentIndex = 0;
+  if (currentIndex > maxIndex) currentIndex = maxIndex;
 
   slidesTeam.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 }
 
+// Botões agora avançam/devolvem pelo número de slides visíveis
 btnPrev.addEventListener('click', () => {
-  currentIndex--;
+  const slidesToShow = getSlidesToShow();
+  currentIndex -= slidesToShow;
   updateSlidePosition();
 });
 
 btnNext.addEventListener('click', () => {
-  currentIndex++;
+  const slidesToShow = getSlidesToShow();
+  currentIndex += slidesToShow;
   updateSlidePosition();
 });
 
 // Atualiza ao redimensionar a tela
 window.addEventListener('resize', updateSlidePosition);
-
-// Auto slide a cada 5 segundos
-setInterval(() => {
-  currentIndex++;
-  updateSlidePosition();
-}, 5000);
 
 // Inicializa a posição
 updateSlidePosition();
