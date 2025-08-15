@@ -1438,6 +1438,27 @@ blog
   cursor: pointer;
 }
 
+.text {
+  overflow: hidden;
+  max-height: 80px; /* altura inicial */
+  position: relative; /* para posicionar o ::after */
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  opacity: 1;
+}
+
+/* cria a sombra na parte inferior quando o texto não está expandido */
+.text:not(.expanded)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px; /* altura da sombra */
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, white 100%);
+  pointer-events: none; /* não bloquear clique no botão */
+}
+
+
 
 /*-*/
 
@@ -1765,3 +1786,18 @@ preloader
 
 .text-show{display: none;}
 
+/*botões do carrossel*/
+
+#prev {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#next {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}

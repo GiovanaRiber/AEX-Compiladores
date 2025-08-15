@@ -150,15 +150,17 @@ function updateSlidePosition() {
   const slideWidth = teamMembers[0].offsetWidth;
   const totalSlides = teamMembers.length;
 
-  // Limita o índice para não deixar espaço vazio
   const maxIndex = totalSlides - slidesToShow;
   if (currentIndex < 0) currentIndex = 0;
   if (currentIndex > maxIndex) currentIndex = maxIndex;
 
   slidesTeam.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+  // Mostra ou esconde os botões
+  btnPrev.style.display = currentIndex === 0 ? 'none' : 'block';
+  btnNext.style.display = currentIndex === maxIndex ? 'none' : 'block';
 }
 
-// Botões agora avançam/devolvem pelo número de slides visíveis
 btnPrev.addEventListener('click', () => {
   const slidesToShow = getSlidesToShow();
   currentIndex -= slidesToShow;
@@ -171,17 +173,29 @@ btnNext.addEventListener('click', () => {
   updateSlidePosition();
 });
 
-// Atualiza ao redimensionar a tela
 window.addEventListener('resize', updateSlidePosition);
 
-// Inicializa a posição
+// Inicializa
 updateSlidePosition();
 
+function updateSlidePosition() {
+  const slidesToShow = getSlidesToShow();
+  const slideWidth = teamMembers[0].offsetWidth;
+  const totalSlides = teamMembers.length;
+
+  const maxIndex = totalSlides - slidesToShow;
+  if (currentIndex < 0) currentIndex = 0;
+  if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+  slidesTeam.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+  // Controle da visibilidade dos botões
+  btnPrev.style.display = currentIndex === 0 ? 'none' : 'block';
+  btnNext.style.display = currentIndex === maxIndex ? 'none' : 'block';
+}
 
 
-
-
-// transição mais suave ao clicar no botão
+// transição mais suave ao clicar no botão de ler mais
 document.querySelectorAll(".read-more-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     const textContainer = btn.parentElement.querySelector(".text");
