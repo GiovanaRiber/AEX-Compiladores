@@ -370,7 +370,7 @@ button.main-button:hover {
 
 /* 
 ---------------------------------------------
-header
+
 --------------------------------------------- 
 */
 .header-area {
@@ -780,7 +780,7 @@ features
 .home-feature {
   padding-bottom: 0px;
   padding-top: 30px;
-  margin-top: -220px;
+  margin-top: -205px;
   z-index: 9;
 }
 
