@@ -931,6 +931,18 @@ parallax & home seperator
   margin-top: 20px;
 }
 
+.mini .mini-content .mini-box.workshop {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mini .mini-content .mini-box.workshop:hover {
+  background: #f0f8ff; /* azul clarinho ao passar o mouse */
+  margin-top: -10px; /* mantém o efeito de "subir" */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+
 .counter {
   overflow: hidden;
   position: relative;
